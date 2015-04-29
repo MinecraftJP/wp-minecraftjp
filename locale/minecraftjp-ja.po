@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: wp-minecraftjp\n"
-"POT-Creation-Date: 2015-04-30 00:26+0900\n"
-"PO-Revision-Date: 2015-04-30 00:51+0900\n"
+"POT-Creation-Date: 2015-04-30 07:49+0900\n"
+"PO-Revision-Date: 2015-04-30 07:49+0900\n"
 "Last-Translator: ayunyan <ayu@commun.jp>\n"
 "Language-Team: \n"
 "Language: Japanese\n"
@@ -16,7 +16,7 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 
 #: WPMinecraftJP/View/admin_settings.php:3
-#: WPMinecraftJP/Controller/AdminController.php:8
+#: WPMinecraftJP/Controller/AdminController.php:10
 msgid "MinecraftJP Settings"
 msgstr "MinecraftJP設定"
 
@@ -54,6 +54,18 @@ msgid "Callback URI"
 msgstr "コールバックURI"
 
 #: WPMinecraftJP/View/admin_settings.php:43
+msgid "Avatar Settings"
+msgstr "アバター設定"
+
+#: WPMinecraftJP/View/admin_settings.php:48
+msgid "Avatar Display"
+msgstr "アバター表示"
+
+#: WPMinecraftJP/View/admin_settings.php:49
+msgid "Show Minecraft Avatar"
+msgstr "Minecraftのアバターを表示する"
+
+#: WPMinecraftJP/View/admin_settings.php:54
 msgid "Save Changes"
 msgstr "変更を保存"
 
@@ -69,27 +81,31 @@ msgstr "アカウントのリンク解除"
 msgid "Link account"
 msgstr "アカウントをリンク"
 
-#: WPMinecraftJP/Controller/AdminController.php:22
+#: WPMinecraftJP/Controller/AdminController.php:26
 msgid "Settings saved."
 msgstr "設定を保存しました。"
+
+#: WPMinecraftJP/Controller/AdminController.php:55
+msgid "Settings"
+msgstr "設定"
 
 #: WPMinecraftJP/Controller/PublicController.php:36
 msgid "This account is already linked."
 msgstr "このアカウントは既にリンクされています。"
 
-#: WPMinecraftJP/Controller/PublicController.php:40
+#: WPMinecraftJP/Controller/PublicController.php:41
 msgid "Minecraft.jp account linked successfully."
 msgstr "Minecraft.jpアカウントのリンクに成功しました。"
 
-#: WPMinecraftJP/Controller/PublicController.php:43
-#: WPMinecraftJP/Controller/PublicController.php:85
+#: WPMinecraftJP/Controller/PublicController.php:44
+#: WPMinecraftJP/Controller/PublicController.php:87
 msgid "Authorization denied."
 msgstr "承認に失敗しました。"
 
-#: WPMinecraftJP/Controller/PublicController.php:52
+#: WPMinecraftJP/Controller/PublicController.php:53
 msgid "username or email is already taken."
 msgstr "ユーザ名またはメールアドレスは既に登録されています。"
 
-#: WPMinecraftJP/Controller/PublicController.php:97
+#: WPMinecraftJP/Controller/PublicController.php:99
 msgid "Minecraft.jp account unlinked successfully."
 msgstr "Minecraft.jpアカウントのリンク解除に成功しました。"

@@ -7,7 +7,8 @@ class UserController extends Controller {
 
         add_action('login_form', array(&$this, 'actionLoginForm'));
         add_action('register_form', array(&$this, 'actionRegisterForm'));
-        add_filter('login_message', array(&$this, 'filterLoginMessage'));
+        add_filter('login_message', array(&$this, 'filterLoginMessage'), 10, 1);
+        add_filter('get_avatar', array(&$this, 'filterGetAvatar'), 10, 5);
     }
 
     public function actionLoginForm() {
@@ -33,5 +34,17 @@ _HTML_;
         }
 
         return $loginMessage;
+    }
+
+    public function filterGetAvatar($avatar, $idOrEmail, $size, $default, $alt) {
+        if (is_numeric($idOrEmail) && \WPMinecraftJP\Configure::read('avatar_enable')) {
+            $username = get_user_meta($idOrEmail, 'minecraftjp_username', true);
+            if ($username) {
+                $url = 'https://avatar.minecraft.jp/' . $username . '/minecraft/' . $size . '.png';
+                $avatar = sprintf('<img alt="%s" src="%s" class="avatar avatar-%d photo" height="%d" width="%d" />', esc_attr($alt), $url, $size, $size, $size);
+            }
+        }
+
+        return $avatar;
     }
 }

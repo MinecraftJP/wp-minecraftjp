@@ -40,6 +40,17 @@
             </tbody>
         </table>
 
+        <h3 class="clear"><?php echo __('Avatar Settings', WPMinecraftJP\App::NAME); ?></h3>
+
+        <table class="form-table">
+            <tbody>
+            <tr>
+                <th scope="row"><?php echo __('Avatar Display'); ?></th>
+                <td><input type="checkbox" id="avatarEnable" name="avatar_enable" value="1" <?php echo (\WPMinecraftJP\Configure::read('avatar_enable') == 1 ? ' checked="checked"' : ''); ?>/><label for="avatarEnable"><?php echo __('Show Minecraft Avatar', \WPMinecraftJP\App::NAME); ?></label></td>
+            </tr>
+            </tbody>
+        </table>
+
         <input type="submit" value="<?php echo __('Save Changes'); ?>" name="updateSettings" class="button button-primary"/>
     </form>
 </div>

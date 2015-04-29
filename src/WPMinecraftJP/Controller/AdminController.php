@@ -21,6 +21,7 @@ class AdminController extends Controller {
                     \WPMinecraftJP\Configure::write($field, $_POST[$field]);
                 }
             }
+            \WPMinecraftJP\Configure::write('avatar_enable', isset($_POST['avatar_enable']) && $_POST['avatar_enable'] == '1' ? 1 : 0);
 
             header('Location: ' . admin_url('?page=minecraftjp&success=' . urlencode(__('Settings saved.'))));
             exit;

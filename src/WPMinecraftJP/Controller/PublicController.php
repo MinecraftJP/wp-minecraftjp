@@ -37,6 +37,7 @@ class PublicController extends Controller {
                 } else {
                     update_user_meta($userId, 'minecraftjp_sub', $mcjpUser['sub']);
                     update_user_meta($userId, 'minecraftjp_uuid', $mcjpUser['uuid']);
+                    update_user_meta($userId, 'minecraftjp_username', $mcjpUser['preferred_username']);
                     $this->setFlash(__('Minecraft.jp account linked successfully.', App::NAME));
                 }
             } else {
@@ -64,6 +65,7 @@ class PublicController extends Controller {
                         update_user_meta($userId, 'minecraftjp_uuid', $mcjpUser['uuid']);
                     }
                 }
+                update_user_meta($userId, 'minecraftjp_username', $mcjpUser['preferred_username']);
                 wp_set_auth_cookie($userId, true);
                 $user = get_user_by('id', $userId);
                 if ((empty($redirectTo) || $redirectTo == 'wp-admin/' || $redirectTo == admin_url())) {

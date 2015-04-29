@@ -5,6 +5,7 @@ class Configure {
     protected static $config = array(
         'client_id' => '',
         'client_secret' => '',
+        'avatar_enable' => true,
     );
 
     public static function load() {
