@@ -1,12 +1,15 @@
 <?php
 namespace WPMinecraftJP\Controller;
 
+use WPMinecraftJP\App;
+
 class UserController extends Controller {
     public function __construct() {
         parent::__construct();
 
         add_action('login_form', array(&$this, 'actionLoginForm'));
         add_action('register_form', array(&$this, 'actionRegisterForm'));
+        add_action('login_head', array(&$this, 'actionLoginHead'));
         add_filter('login_message', array(&$this, 'filterLoginMessage'), 10, 1);
         add_filter('get_avatar', array(&$this, 'filterGetAvatar'), 10, 5);
     }
@@ -17,6 +20,10 @@ class UserController extends Controller {
 
     public function actionRegisterForm() {
         $this->render('login');
+    }
+
+    public function actionLoginHead() {
+        printf('<link rel="stylesheet" href="%s" type="text/css" media="all" />', plugins_url('css/login.css', App::getPluginFile()));
     }
 
     public function filterLoginMessage($loginMessage) {

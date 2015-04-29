@@ -1,0 +1,15 @@
+.minecraftjp-loginform {
+    margin-bottom: 5px;
+}
+
+.minecraftjp-loginform a.button {
+}
+
+.minecraftjp-icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-image: url(../img/icon.png);
+    background-repeat: no-repeat;
+    vertical-align: text-top;
+}
