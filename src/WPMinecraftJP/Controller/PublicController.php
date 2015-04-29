@@ -48,7 +48,8 @@ class PublicController extends Controller {
             if (!empty($mcjpUser)) {
                 $userId = $this->User->getUserIdBySub($mcjpUser['sub']);
                 if (!$userId) {
-                    $result = wp_create_user($mcjpUser['preferred_username'] . '@minecraft.jp', wp_generate_password(), $mcjpUser['email']);
+                    $password = wp_generate_password();
+                    $result = wp_create_user($mcjpUser['preferred_username'] . '@minecraft.jp', $password, $mcjpUser['email']);
                     if (is_wp_error($result)) {
                         $this->setFlash(__('username or email is already taken.', App::NAME), 'default', array('class' => 'error'));
                         wp_safe_redirect(site_url('wp-login.php'));
@@ -63,6 +64,9 @@ class PublicController extends Controller {
                         update_user_meta($userId, 'nickname', $mcjpUser['preferred_username']);
                         update_user_meta($userId, 'minecraftjp_sub', $mcjpUser['sub']);
                         update_user_meta($userId, 'minecraftjp_uuid', $mcjpUser['uuid']);
+
+                        // send password notification
+                        wp_new_user_notification($userId, $password);
                     }
                 }
                 update_user_meta($userId, 'minecraftjp_username', $mcjpUser['preferred_username']);
