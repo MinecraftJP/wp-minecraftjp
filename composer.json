@@ -1,0 +1,13 @@
+{
+    "name": "minecraftjp/wp-minecraftjp",
+    "description": "minecraft.jp login plugin",
+    "authors": [
+        {
+            "name": "ayunyan",
+            "email": "ayunyan@gmail.com"
+        }
+    ],
+    "require": {
+        "minecraftjp/minecraftjp-php-sdk": ">=1.1.0"
+    }
+}
