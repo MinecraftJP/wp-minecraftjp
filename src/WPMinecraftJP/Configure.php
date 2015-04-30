@@ -42,4 +42,10 @@ class Configure {
     public static function out($key = null) {
         echo htmlspecialchars(Configure::read($key));
     }
+
+    public static function deleteAll() {
+        while (list($key, ) = each(self::$config)) {
+            delete_option(App::NAME . '_' . $key);
+        }
+    }
 }
