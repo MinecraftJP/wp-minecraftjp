@@ -48,6 +48,10 @@ class PublicController extends Controller {
             if (!empty($mcjpUser)) {
                 $userId = $this->User->getUserIdBySub($mcjpUser['sub']);
                 if (!$userId) {
+                    if (!get_option('users_can_register')) {
+                        wp_redirect(site_url('wp-login.php?registration=disabled'));
+                        exit;
+                    }
                     $password = wp_generate_password();
                     $result = wp_create_user($mcjpUser['preferred_username'] . '@minecraft.jp', $password, $mcjpUser['email']);
                     if (is_wp_error($result)) {
