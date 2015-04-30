@@ -6,6 +6,7 @@ class Configure {
         'client_id' => '',
         'client_secret' => '',
         'avatar_enable' => true,
+        'rewrite_version' => 0,
     );
 
     public static function load() {

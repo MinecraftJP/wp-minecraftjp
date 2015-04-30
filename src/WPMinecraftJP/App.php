@@ -3,6 +3,7 @@ namespace WPMinecraftJP;
 
 class App {
     const NAME = 'minecraftjp';
+    const REWRITE_VERSION = 1;
 
     public static function init() {
         Configure::load();
@@ -17,11 +18,10 @@ class App {
             add_action('init', array(__CLASS__, 'initPublic'));
             add_action('template_redirect', array(__CLASS__, 'dispatch'), -100);
         }
+        add_action('init', array(__CLASS__, 'initRewriteRule'));
     }
 
     public static function activate() {
-        add_rewrite_rule('^minecraftjp/(.*)?', 'index.php?minecraftjp_action=$matches[1]', 'top');
-        flush_rewrite_rules();
     }
 
     public static function getPluginFile() {
@@ -36,6 +36,14 @@ class App {
 
     public function initAdmin() {
         add_action('admin_menu', array('WPMinecraftJP\Controller\AdminController', 'init'));
+    }
+
+    public function initRewriteRule() {
+        add_rewrite_rule('^minecraftjp/(.*)?', 'index.php?minecraftjp_action=$matches[1]', 'top');
+        if (Configure::read('rewrite_version') < self::REWRITE_VERSION) {
+            flush_rewrite_rules();
+            Configure::write('rewrite_version', self::REWRITE_VERSION);
+        }
     }
 
     public function dispatch() {
