@@ -3,7 +3,7 @@ Contributors: ayunyan
 Tags: openid connect, oauth, login, minecraft
 Requires at least: 3.2
 Tested up to: 4.2
-Stable tag: 4.3
+Stable tag: 1.0.0
 License: MIT
 License URI: http://opensource.org/licenses/MIT
 
