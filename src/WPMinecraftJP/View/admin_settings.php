@@ -51,6 +51,20 @@
             </tbody>
         </table>
 
+        <h3 class="clear"><?php echo __('User Settings', WPMinecraftJP\App::NAME); ?></h3>
+
+        <table class="form-table">
+            <tbody>
+            <tr>
+                <th scope="row"><?php echo __('Username Suffix', WPMinecraftJP\App::NAME); ?></th>
+                <td>
+                    <input name="username_suffix" type="text" value="<?php WPMinecraftJP\Configure::out('username_suffix'); ?>" class="regular-text">
+                    <p class="description"><?php echo __('You can add a suffix to username in order to avoid conflicts with existing username. (e.g. "@minecraft.jp")', WPMinecraftJP\App::NAME); ?></p>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
         <input type="submit" value="<?php echo __('Save Changes'); ?>" name="updateSettings" class="button button-primary"/>
     </form>
 </div>

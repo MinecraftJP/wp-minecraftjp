@@ -2,6 +2,7 @@
 namespace WPMinecraftJP\Controller;
 
 use WPMinecraftJP\App;
+use WPMinecraftJP\Configure;
 
 class AdminController extends Controller {
     private $group;
@@ -15,13 +16,13 @@ class AdminController extends Controller {
 
     public function settings() {
         if (!empty($_POST['updateSettings'])) {
-            $fields = array('client_id', 'client_secret');
+            $fields = array('client_id', 'client_secret', 'username_suffix');
             foreach ($fields as $field) {
                 if (isset($_POST[$field])) {
-                    \WPMinecraftJP\Configure::write($field, $_POST[$field]);
+                    Configure::write($field, $_POST[$field]);
                 }
             }
-            \WPMinecraftJP\Configure::write('avatar_enable', isset($_POST['avatar_enable']) && $_POST['avatar_enable'] == '1' ? 1 : 0);
+            Configure::write('avatar_enable', isset($_POST['avatar_enable']) && $_POST['avatar_enable'] == '1' ? 1 : 0);
 
             header('Location: ' . admin_url('?page=minecraftjp&success=' . urlencode(__('Settings saved.'))));
             exit;
@@ -32,7 +33,7 @@ class AdminController extends Controller {
     }
 
     public function actionAdminNotices() {
-        $name = \WPMinecraftJP\App::NAME . '_flash';
+        $name = App::NAME . '_flash';
         $messages = isset($_COOKIE[$name]) ? json_decode(stripcslashes($_COOKIE[$name]), true) : array();
         foreach ($messages as $message) {
             $class = isset($message['params']['class']) ? $message['params']['class'] : 'updated';
@@ -51,7 +52,7 @@ _HTML_;
     }
 
     public function filterPluginActionLinks($links, $file) {
-        if ($file == plugin_basename(\WPMinecraftJP\App::getPluginFile())) {
+        if ($file == plugin_basename(App::getPluginFile())) {
             array_unshift($links, '<a href="' . admin_url('admin.php?page=minecraftjp') . '">' . __('Settings') . '</a>');
         }
         return $links;

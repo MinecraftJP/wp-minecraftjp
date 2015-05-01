@@ -53,7 +53,7 @@ class PublicController extends Controller {
                         exit;
                     }
                     $password = wp_generate_password();
-                    $result = wp_create_user($mcjpUser['preferred_username'] . '@minecraft.jp', $password, $mcjpUser['email']);
+                    $result = wp_create_user($mcjpUser['preferred_username'] . Configure::read('username_suffix'), $password, $mcjpUser['email']);
                     if (is_wp_error($result)) {
                         $this->setFlash(__('username or email is already taken.', App::NAME), 'default', array('class' => 'error'));
                         wp_safe_redirect(site_url('wp-login.php'));

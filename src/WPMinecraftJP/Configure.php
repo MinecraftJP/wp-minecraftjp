@@ -6,6 +6,7 @@ class Configure {
         'client_id' => '',
         'client_secret' => '',
         'avatar_enable' => true,
+        'username_suffix' => '',
         'rewrite_version' => 0,
     );
 
