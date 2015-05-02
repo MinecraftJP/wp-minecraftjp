@@ -26,9 +26,17 @@ class PublicController extends Controller {
 
         $authType = !empty($_SESSION['auth_type']) ? $_SESSION['auth_type'] : 'login';
         $redirectTo = $_SESSION['redirect_to'];
-        $mcjpUser = $minecraftjp->getUser();
+
 
         if ($authType == 'link') {
+            try {
+                $mcjpUser = $minecraftjp->getUser();
+            } catch (\Exception $e) {
+                $this->setFlash($e->getMessage(), 'default', array('class' => 'error'));
+                wp_safe_redirect(admin_url('profile.php'));
+                exit;
+            }
+
             if (!empty($mcjpUser)) {
                 $userId = get_current_user_id();
                 $existsUserId = $this->User->getUserIdBySub($mcjpUser['sub']);
@@ -45,6 +53,14 @@ class PublicController extends Controller {
             }
             wp_safe_redirect(admin_url('profile.php'));
        } else {
+            try {
+                $mcjpUser = $minecraftjp->getUser();
+            } catch (\Exception $e) {
+                $this->setFlash($e->getMessage(), 'default', array('class' => 'error'));
+                wp_safe_redirect(site_url('wp-login.php'));
+                exit;
+            }
+
             if (!empty($mcjpUser)) {
                 $userId = $this->User->getUserIdBySub($mcjpUser['sub']);
                 if (!$userId) {
