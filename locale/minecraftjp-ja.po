@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: wp-minecraftjp\n"
-"POT-Creation-Date: 2015-05-01 15:37+0900\n"
-"PO-Revision-Date: 2015-05-01 15:37+0900\n"
+"POT-Creation-Date: 2015-05-02 16:47+0900\n"
+"PO-Revision-Date: 2015-05-02 16:48+0900\n"
 "Last-Translator: ayunyan <ayu@commun.jp>\n"
 "Language-Team: \n"
 "Language: Japanese\n"
@@ -14,6 +14,18 @@ msgstr ""
 "X-Poedit-Basepath: S:\\vhosts\\neko\\public_html\\wordpress\\wp-content"
 "\\plugins\\minecraftjp\\src\n"
 "X-Poedit-SearchPath-0: .\n"
+
+#: WPMinecraftJP/View/user_profile.php:5
+msgid "minecraft.jp"
+msgstr ""
+
+#: WPMinecraftJP/View/user_profile.php:8
+msgid "Unlink account"
+msgstr "アカウントのリンク解除"
+
+#: WPMinecraftJP/View/user_profile.php:10
+msgid "Link account"
+msgstr "アカウントをリンク"
 
 #: WPMinecraftJP/View/admin_settings.php:3
 #: WPMinecraftJP/Controller/AdminController.php:11
@@ -70,10 +82,18 @@ msgid "User Settings"
 msgstr "ユーザ設定"
 
 #: WPMinecraftJP/View/admin_settings.php:59
+msgid "Membership"
+msgstr ""
+
+#: WPMinecraftJP/View/admin_settings.php:60
+msgid "Force users can register"
+msgstr "常にユーザー登録可能にする"
+
+#: WPMinecraftJP/View/admin_settings.php:63
 msgid "Username Suffix"
 msgstr "ユーザ名サフィックス"
 
-#: WPMinecraftJP/View/admin_settings.php:62
+#: WPMinecraftJP/View/admin_settings.php:66
 msgid ""
 "You can add a suffix to username in order to avoid conflicts with existing "
 "username. (e.g. \"@minecraft.jp\")"
@@ -81,51 +101,39 @@ msgstr ""
 "既存のユーザ名との衝突を避けるためにユーザ名にサフィックスを追加する事が出来"
 "ます。 (例: \"@minecraft.jp\")"
 
-#: WPMinecraftJP/View/admin_settings.php:68
+#: WPMinecraftJP/View/admin_settings.php:72
 msgid "Save Changes"
 msgstr "変更を保存"
-
-#: WPMinecraftJP/View/user_profile.php:5
-msgid "minecraft.jp"
-msgstr ""
-
-#: WPMinecraftJP/View/user_profile.php:8
-msgid "Unlink account"
-msgstr "アカウントのリンク解除"
-
-#: WPMinecraftJP/View/user_profile.php:10
-msgid "Link account"
-msgstr "アカウントをリンク"
 
 #: WPMinecraftJP/View/login.php:2
 msgid "Login with minecraft.jp"
 msgstr "minecraft.jpでログイン"
 
-#: WPMinecraftJP/Controller/AdminController.php:27
+#: WPMinecraftJP/Controller/AdminController.php:28
 msgid "Settings saved."
 msgstr "設定を保存しました。"
 
-#: WPMinecraftJP/Controller/AdminController.php:56
+#: WPMinecraftJP/Controller/AdminController.php:57
 msgid "Settings"
 msgstr "設定"
 
-#: WPMinecraftJP/Controller/PublicController.php:36
+#: WPMinecraftJP/Controller/PublicController.php:47
 msgid "This account is already linked."
 msgstr "このアカウントは既にリンクされています。"
 
-#: WPMinecraftJP/Controller/PublicController.php:41
+#: WPMinecraftJP/Controller/PublicController.php:52
 msgid "Minecraft.jp account linked successfully."
 msgstr "Minecraft.jpアカウントのリンクに成功しました。"
 
-#: WPMinecraftJP/Controller/PublicController.php:44
-#: WPMinecraftJP/Controller/PublicController.php:95
+#: WPMinecraftJP/Controller/PublicController.php:55
+#: WPMinecraftJP/Controller/PublicController.php:114
 msgid "Authorization denied."
 msgstr "承認に失敗しました。"
 
-#: WPMinecraftJP/Controller/PublicController.php:58
+#: WPMinecraftJP/Controller/PublicController.php:77
 msgid "username or email is already taken."
 msgstr "ユーザ名またはメールアドレスは既に登録されています。"
 
-#: WPMinecraftJP/Controller/PublicController.php:107
+#: WPMinecraftJP/Controller/PublicController.php:126
 msgid "Minecraft.jp account unlinked successfully."
 msgstr "Minecraft.jpアカウントのリンク解除に成功しました。"

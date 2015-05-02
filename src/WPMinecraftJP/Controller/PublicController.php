@@ -67,7 +67,7 @@ class PublicController extends Controller {
             if (!empty($mcjpUser)) {
                 $userId = $this->User->getUserIdBySub($mcjpUser['sub']);
                 if (!$userId) {
-                    if (!get_option('users_can_register')) {
+                    if (!get_option('users_can_register') && !Configure::read('force_users_can_register')) {
                         wp_redirect(site_url('wp-login.php?registration=disabled'));
                         exit;
                     }

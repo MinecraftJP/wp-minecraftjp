@@ -23,6 +23,7 @@ class AdminController extends Controller {
                 }
             }
             Configure::write('avatar_enable', isset($_POST['avatar_enable']) && $_POST['avatar_enable'] == '1' ? 1 : 0);
+            Configure::write('force_users_can_register', isset($_POST['force_users_can_register']) && $_POST['force_users_can_register'] == '1' ? 1 : 0);
 
             header('Location: ' . admin_url('?page=minecraftjp&success=' . urlencode(__('Settings saved.'))));
             exit;

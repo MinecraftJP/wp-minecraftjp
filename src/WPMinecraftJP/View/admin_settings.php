@@ -56,6 +56,10 @@
         <table class="form-table">
             <tbody>
             <tr>
+                <th scope="row"><?php echo __('Membership'); ?></th>
+                <td><input type="checkbox" id="avatarEnable" name="force_users_can_register" value="1" <?php echo (\WPMinecraftJP\Configure::read('avatar_enable') == 1 ? ' checked="checked"' : ''); ?>/><label for="avatarEnable"><?php echo __('Force users can register', \WPMinecraftJP\App::NAME); ?></label></td>
+            </tr>
+            <tr>
                 <th scope="row"><?php echo __('Username Suffix', WPMinecraftJP\App::NAME); ?></th>
                 <td>
                     <input name="username_suffix" type="text" value="<?php WPMinecraftJP\Configure::out('username_suffix'); ?>" class="regular-text">

@@ -7,6 +7,7 @@ class Configure {
         'client_secret' => '',
         'avatar_enable' => true,
         'username_suffix' => '',
+        'force_users_can_register' => false,
         'rewrite_version' => 0,
     );
 
