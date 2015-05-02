@@ -8,6 +8,6 @@
         }
     ],
     "require": {
-        "minecraftjp/minecraftjp-php-sdk": ">=1.1.0"
+        "minecraftjp/minecraftjp-php-sdk": ">=1.1.2"
     }
 }
