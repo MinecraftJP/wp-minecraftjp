@@ -11,6 +11,9 @@ class PublicController extends Controller {
         $minecraftjp = $this->getMinecraftJP();
 
         $_SESSION['auth_type'] = !empty($_GET['type']) ? $_GET['type'] : 'login';
+        if (!empty($_GET['redirect_to'])) {
+            $_SESSION['redirect_to'] = $_GET['redirect_to'];
+        }
 
         $minecraftjp->logout();
         $url = $minecraftjp->getLoginUrl(array(
@@ -25,7 +28,7 @@ class PublicController extends Controller {
         $minecraftjp = $this->getMinecraftJP();
 
         $authType = !empty($_SESSION['auth_type']) ? $_SESSION['auth_type'] : 'login';
-        $redirectTo = $_SESSION['redirect_to'];
+        $redirectTo = !empty($_SESSION['redirect_to']) ? $_SESSION['redirect_to'] : '';
 
 
         if ($authType == 'link') {

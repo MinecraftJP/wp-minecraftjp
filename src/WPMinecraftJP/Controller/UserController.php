@@ -15,10 +15,20 @@ class UserController extends Controller {
     }
 
     public function actionLoginForm() {
+        $loginUrl = home_url('/minecraftjp/login');
+        if (!empty($_GET['redirect_to'])) {
+            $loginUrl .= '?redirect_to=' . $_GET['redirect_to'];
+        }
+        $this->set(compact('loginUrl'));
         $this->render('login');
     }
 
     public function actionRegisterForm() {
+        $loginUrl = home_url('/minecraftjp/login');
+        if (!empty($_GET['redirect_to'])) {
+            $loginUrl .= '?redirect_to=' . $_GET['redirect_to'];
+        }
+        $this->set(compact('loginUrl'));
         $this->render('login');
     }
 
