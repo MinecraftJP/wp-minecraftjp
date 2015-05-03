@@ -44,7 +44,7 @@ class AdminController extends Controller {
 </div>
 _HTML_;
         }
-        setcookie($name, '', time() - 3600);
+        setcookie($name, '', time() - 3600, '/');
     }
 
     public function actionShowUserProfile() {
