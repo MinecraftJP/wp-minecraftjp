@@ -119,6 +119,12 @@ class PublicController extends Controller {
     }
 
     public function unlink() {
+        if (!wp_verify_nonce(isset($_GET['token']) ? $_GET['token'] : '', 'minecraftjp_unlink')) {
+            $this->setFlash(__('Bad request.', App::NAME), 'default', array('class' => 'error'));
+            wp_safe_redirect(admin_url('profile.php'));
+            exit;
+        }
+
         $userId = get_current_user_id();
         if (!empty($userId)) {
             delete_user_meta($userId, 'minecraftjp_sub');

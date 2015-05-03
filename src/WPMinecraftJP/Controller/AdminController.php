@@ -16,6 +16,12 @@ class AdminController extends Controller {
 
     public function settings() {
         if (!empty($_POST['updateSettings'])) {
+            if (!wp_verify_nonce(isset($_POST['token']) ? $_POST['token'] : '', 'minecraftjp_settings')) {
+                $this->setFlash(__('Bad request.', App::NAME), 'default', array('class' => 'error'));
+                wp_safe_redirect(admin_url('?page=minecraftjp'));
+                exit;
+            }
+
             $fields = array('client_id', 'client_secret', 'username_suffix');
             foreach ($fields as $field) {
                 if (isset($_POST[$field])) {

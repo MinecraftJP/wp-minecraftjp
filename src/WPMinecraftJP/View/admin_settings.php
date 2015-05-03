@@ -14,6 +14,7 @@
     <?php } ?>
 
     <form action="<?php echo admin_url('admin.php?page=minecraftjp'); ?>" method="post">
+        <input type="hidden" name="token" value="<?php echo wp_create_nonce('minecraftjp_settings'); ?>"/>
 
         <h3 class="clear"><?php echo __('Application Settings', WPMinecraftJP\App::NAME); ?></h3>
 
