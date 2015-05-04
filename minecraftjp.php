@@ -5,7 +5,7 @@ Plugin URI: https://minecraft.jp
 Description: A WordPress plugin that allows you to login with minecraft.jp account
 Author: Japan Minecraft Network
 Author URI: https://minecraft.jp
-Version: 1.0.3
+Version: 1.0.4
  */
 if (!defined('ABSPATH')) {
     die();

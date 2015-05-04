@@ -3,7 +3,7 @@ Contributors: ayunyan
 Tags: openid connect, oauth, login, minecraft
 Requires at least: 3.2
 Tested up to: 4.2
-Stable tag: 1.0.3
+Stable tag: 1.0.4
 License: MIT
 License URI: http://opensource.org/licenses/MIT
 
@@ -22,4 +22,8 @@ MinecraftJP WordPress plugin allows your users to login to your WordPress using 
 
 1. Add MinecraftJP plugin to your WordPress installation
 1. Activate the plugin through the 'Plugins' menu.
+
+== Contribution ==
+
+https://github.com/MinecraftJP/wp-minecraftjp
 
